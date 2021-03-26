@@ -1,0 +1,3 @@
+HUGO_DOCKER_IMAGE=klakegg/hugo:ext-alpine
+alias hugo='docker run --rm -it -v $(pwd):/src $HUGO_DOCKER_IMAGE'
+alias hugoserver='docker run --rm -it -v $(pwd):/src -p 1313:1313 $HUGO_DOCKER_IMAGE server -D --bind 0.0.0.0 --baseURL=http://local.test:1313'
