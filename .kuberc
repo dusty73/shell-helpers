@@ -1,0 +1,10 @@
+alias k='kubectl'
+complete -F __start_kubectl k
+
+function k-ns {
+    if [[ -z $1 ]] ; then
+        echo "Please specify namespace"
+        exit;
+    fi
+    k config set-context --current --namespace=$1
+}
